@@ -1,0 +1,289 @@
+/* -------------------- IMPORTED FONTS -------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Habibi&family=Irish+Grover&display=swap');
+
+/*-------------------- CSS RESET --------------------*/
+/* http://meyerweb.com/eric/tools/css/reset/
+v2.0 | 20110126
+License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+/* -------------------- ROOT VARIABLES  -------------------- */
+:root {
+    font-family: "Habibi", serif;
+    font-size: 1.25em;
+    --green:#06A816;
+    --orange:#E75D02;
+    --black:#000000;
+    --white:#ffffff;
+}
+
+/* --------------------GLOBAL STYLES (mobile first/small) --------------------*/
+
+body {
+    min-width: 428px;
+}
+
+header {
+    background-color: #06A816;
+    color: #ffffff;
+}
+
+.navigation {
+    background-color: #ffffff;
+    padding: 2px;
+}
+
+h1, h2, h3 {
+    font-family: "Irish Grover";
+}
+
+h1 {
+    font-size: 2.5em;
+    text-shadow: 2px 2px #000000;
+}
+
+h2 {
+    font-size: 1.75em;
+}
+
+h3 {
+    text-align: center;
+}
+
+h3, text {
+    font-size: 1.25em;
+}
+
+h1, h2, h3, p, img {
+    padding: 10px
+}
+
+nav {
+    margin-top: 40px;
+}
+
+nav li {
+    list-style:none;
+    width: 500px;
+}
+
+nav a {
+    text-decoration: none;
+    background-color: #E75D02;
+    text-align: center;
+    display: block;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    margin: 40px;
+    padding: 10px;
+}
+
+#top a {
+    position: fixed;
+    bottom: 1px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    align-content: center;
+    z-index: 1;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 20px;
+}
+
+.images {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+img {
+    width: 400px;
+    padding: 10px;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.image-container .caption {
+    position: relative;
+    bottom: 250px;
+    left: 100px;
+    width: 200px;
+    height: 50px;
+    background-color: #000000;
+    opacity: .6;
+    color: #ffffff;
+    text-align: center;
+    padding: 5px;
+    font-size: var(--h3-text-size);
+  }
+
+.business-info {
+    background-color: #06A816;
+    color: #ffffff;
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+}
+
+/*-------------------- MEDIA QUERY (medium) --------------------------------*/
+@media screen and (min-width: 834px) {
+    
+    nav ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .images {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    #fruits {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    .business-info {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #contact {
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+
+    #hours {
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+}
+
+/*-------------------- MEDIA QUERY (large) ------------------------------------*/
+@media screen and (min-width: 1280px) {
+    main {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    header {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+    }
+
+    h1 + p {
+        grid-column-start: 1;
+        grid-column-end: 1;
+    }
+
+    .navigation {
+        grid-column-start: 2;
+        grid-column-end: 4;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        align-content: center;
+        background-color: #06A816;
+    }
+
+    .images {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .business-info {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        text-align: left;
+        align-content: center;
+    }
+
+    #contact {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    #hours {
+        grid-column-start: 3;
+        grid-column-end: 5;
+    }
+}
+
+/*-------------------- MEDIA QUERY (xl) ---------------------------------------*/
+@media screen and (min-width: 1440px) {
+
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .images {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    section {
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+
+    #fruits {
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+
+    #vegetables {
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+}
